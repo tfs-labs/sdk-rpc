@@ -1,0 +1,1 @@
+javac -sourcepath src src/test/*.java src/tx/*.java -extdirs lib

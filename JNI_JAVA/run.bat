@@ -1,0 +1,1 @@
+java -classpath ".;C:\Users\admin\Desktop\JNI\JNI_JAVA\lib\*"  src.test.testMain
