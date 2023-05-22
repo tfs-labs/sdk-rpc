@@ -1,0 +1,67 @@
+{
+	"events": {
+		"Approval(address,address,uint256)": {
+			"details": "This emits when the approved address for an NFT is changed or  reaffirmed. The zero address indicates there is no approved address.  When a Transfer event emits, this also indicates that the approved  address for that NFT (if any) is reset to none."
+		},
+		"ApprovalForAll(address,address,bool)": {
+			"details": "This emits when an operator is enabled or disabled for an owner.  The operator can manage all NFTs of the owner."
+		},
+		"ApprovalValue(uint256,address,uint256)": {
+			"details": "MUST emits when the approval value of a token is set or changed.",
+			"params": {
+				"_operator": "The operator to approve for",
+				"_tokenId": "The token to approve",
+				"_value": "The maximum value that `_operator` is allowed to manage"
+			}
+		},
+		"SlotChanged(uint256,uint256,uint256)": {
+			"details": "MUST emit when the slot of a token is set or changed.",
+			"params": {
+				"_newSlot": "The updated slot of the token",
+				"_oldSlot": "The previous slot of the token",
+				"_tokenId": "The token of which slot is set or changed"
+			}
+		},
+		"Transfer(address,address,uint256)": {
+			"details": "This emits when ownership of any NFT changes by any mechanism.  This event emits when NFTs are created (`from` == 0) and destroyed  (`to` == 0). Exception: during contract creation, any number of NFTs  may be created and assigned without emitting Transfer. At the time of  any transfer, the approved address for that NFT (if any) is reset to none."
+		},
+		"TransferValue(uint256,uint256,uint256)": {
+			"details": "MUST emit when value of a token is transferred to another token with the same slot,  including zero value transfers (_value == 0) as well as transfers when tokens are created  (`_fromTokenId` == 0) or destroyed (`_toTokenId` == 0).",
+			"params": {
+				"_fromTokenId": "The token id to transfer value from",
+				"_toTokenId": "The token id to transfer value to",
+				"_value": "The transferred value"
+			}
+		}
+	},
+	"kind": "dev",
+	"methods": {
+		"contractURI()": {
+			"details": "This function SHOULD return the URI for this contract in JSON format, starting with  header `data:application/json;`.  See https://eips.ethereum.org/EIPS/eip-3525 for the JSON schema for contract URI.",
+			"returns": {
+				"_0": "The JSON formatted URI of the current ERC3525 contract"
+			}
+		},
+		"name()": {
+			"details": "Returns the token collection name."
+		},
+		"supportsInterface(bytes4)": {
+			"details": "Returns true if this contract implements the interface defined by `interfaceId`. See the corresponding https://eips.ethereum.org/EIPS/eip-165#how-interfaces-are-identified[EIP section] to learn more about how these ids are created. This function call must use less than 30 000 gas."
+		},
+		"symbol()": {
+			"details": "Returns the token collection symbol."
+		},
+		"tokenURI(uint256)": {
+			"details": "Returns the Uniform Resource Identifier (URI) for `tokenId` token."
+		},
+		"totalSupply()": {
+			"returns": {
+				"_0": "A count of valid NFTs tracked by this contract, where each one of  them has an assigned and queryable owner not equal to the zero address"
+			}
+		},
+		"valueDecimals()": {
+			"details": "Returns the number of decimals the token uses for value."
+		}
+	},
+	"version": 1
+}
