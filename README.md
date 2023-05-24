@@ -1,33 +1,17 @@
-# # SDK version
+# SDK Version
 
-SDK Version: v0.0.1
-Corresponding to the version of the support node program: V1.0.1
+SDK Version: V0.0.1 Corresponding
 
-# # introduction
+### Introduction
 
-This SDK is a tool kit for the implementation of transaction functions, it provides a set of API interfaces, is a third-party generation transactions SDK library. It sends HTTP requests to a node via a fixed protocol in the JSON format. It makes it easy for developers to use the functionality it provides. This document is intended to provide developers with instructions on how to use this SDK so that they can quickly get started and use it.
+This SDK is a tool kit for the implementation of transaction functions ,which is a third-party generation transactions SDK library and provides a set of API interfaces. It sends HTTP requests to a node via a fixed protocol in the JSON format. It’s easy for developers to use the functionality it provides. This document is intended to provide developers with instructions on how to use this SDK so that they can quickly get started and use it. 
 
-# # environment and requirements
+### Environment & Requirements
 
-This SDK is applicable to a variety of environments, including:
-
-- Windows (librpc.dll) 
-- Centos 7(librpc.so) 
-
-Software Requirements:
-
-- operating system: Windows 10 or later, or CentOs 7
-- development language: C + + , Go
-
-Hardware Requirements:
-
-Processor: 8-Core 64-bit processor, such as Intel Core I 5 or later
-- memory: 8GB RAM or higher
-- storage: at least 128GB of free space
-
-Prerequisites
-
-A private key needs to be prepared to be imported for the transaction signature, and an interface to import the private key is also provided in the library.
+- Operating system: Windows 10 or later, or CentOs 7
+- Development language: C + + , Go
+- Memory: 8GB RAM or higher
+- Storage: at least 128GB of free space
 
 ”'c' 
 /* Export Base64 private key */
@@ -36,6 +20,7 @@ A private key needs to be prepared to be imported for the transaction signature,
 (DLLEXPORT) long long import (const char * buf, int buf) ;
 /* import the hexadecimal private key */
 (DLLEXPORT) long long import (const char * str) ;
+
 ```
 
 # # transaction flow
@@ -276,5 +261,5 @@ Call (PKEY)
 }
 ```
 
-Note: The above code as an example code, please adjust and develop according to your actual situation.
+Note:The above code is just an example, please adjust and develop it according to your actual situation.
 
