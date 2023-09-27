@@ -1,14 +1,23 @@
 # RPC documentation
 
 ## Installation
-#### note:
+# note:
 - You need to compile the full OpenSSL and Protobuf 
-- Put the compiled file in the lib folder
-
-<br/>
-As:
-
-![lib dir](./pngs/lib.png)
+Download OpenSSL-3.0.5
+ ```shell
+    tar -xvf openssl-3.0.5.tar.gz
+    cd openssl-3.0.5
+    ./Configure 
+    make && make install
+ ```
+  Download Protobuf-CPP-3.21.9
+ ```shell
+    unzip protobuf-cpp-3.21.9
+    cd protobuf-cpp-3.21.9
+    cd cmake && mkdir build
+    cd build
+    cmake .. && make && make install
+ ```
 
 ```shell
     cd rpc_lib

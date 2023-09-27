@@ -3,29 +3,11 @@ cmake_minimum_required(VERSION 3.0 )
 project(rpc.0.0.1)
 
 
-
-if(CMAKE_HOST_UNIX)
-    link_directories(${CMAKE_SOURCE_DIR}/lib/linux)
-elseif(CMAKE_HOST_WIN32)
-    link_directories(${CMAKE_SOURCE_DIR}/lib/windows)
-else()
-    message("unkown platform")
-endif()
-
-
-add_compile_options(-gdwarf-2 -std=c++17 --shared )
+add_compile_options(-g -std=c++17  -fPIC)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-if(CMAKE_HOST_UNIX)
-message("include linux")
-    include_directories(${CMAKE_SOURCE_DIR}/lib/linux/include)
-elseif(CMAKE_HOST_WIN32)
-message("include windows")
-    include_directories(${CMAKE_SOURCE_DIR}/lib/windows/include)
-else()
-    message("unkown platform")
-endif()
+
 
 include_directories(${CMAKE_SOURCE_DIR}/envelop)
 include_directories(${CMAKE_SOURCE_DIR}/sig)
@@ -48,6 +30,8 @@ add_executable(test "test/main.cpp")
 
 if(CMAKE_HOST_UNIX)
 message("link linux")
+    target_link_libraries(${PROJECT_NAME} dl)
+    target_link_libraries(${PROJECT_NAME} pthread)
     target_link_libraries(${PROJECT_NAME} libssl.a)
     target_link_libraries(${PROJECT_NAME} libcrypto.a)
     target_link_libraries(${PROJECT_NAME} libprotobuf.a)
